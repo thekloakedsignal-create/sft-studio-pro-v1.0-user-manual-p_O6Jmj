@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Section 1 · Application Shell &amp; Navigation — SFT Studio Pro Manual</title>
-  <meta name="description" content="SFT Studio Pro v1.0 manual, Section 1: the Studio shell, header controls, and the numbered workflow navigation.">
+  <meta name="description" content="SFT Studio Pro v1.0 manual, Section 1: the Studio header controls and the numbered workflow navigation.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,73 +63,67 @@
         <p class="eyebrow">Section 1 · Application Shell &amp; Navigation</p>
         <h1>Application Shell &amp; Navigation</h1>
 
-        <p class="lede"><strong>Purpose of this section:</strong> orient yourself to the Studio header controls and the numbered workflow navigation that carries you from project definition to export.</p>
+        <p class="lede"><strong>Purpose of this section:</strong> identify the controls in the Studio header and the numbered workflow navigation. Where the supplied documentation does not describe a control's behavior, this section says so rather than inferring it.</p>
 
-        <h2 id="s1-1">1.1 The Shell Header</h2>
-        <p>The header row is the persistent chrome of the application: brand identity, a live dataset counter, the active project selector, and session actions. It remains visible as you move between workflow stages.</p>
+        <h2 id="s1-1">1.1 The Header</h2>
 
         <figure class="figure">
           <div class="figure-media">
-            <img src="IMG_0085.png" data-fig alt="SFT Studio Pro header showing the logo, example counter reading 115 ex., the project selector, and the New, Save, Support, and Account controls">
+            <img src="IMG_0085.png" data-fig alt="SFT Studio Pro header: logo and v1.0 pill, a 115 ex. counter, a project selector reading Socrates (Athena...) with chevron and delete icons, + New and Save buttons, Supp..., Acco..., and an icon button, above an export confirmation toast and the Dataset Registry heading">
           </div>
-          <figcaption><span class="fig-num"></span>The SFT Studio Pro shell header region, visible within a wider application screenshot. <span class="src">Source screenshot: IMG_85, supplied documentation.</span></figcaption>
+          <figcaption><span class="fig-num"></span>The Studio header. This screenshot also contains an export confirmation toast, which is documented in <a href="section-10.html">Section 10</a>. <span class="src">Source screenshot: IMG_85, supplied documentation.</span></figcaption>
         </figure>
 
         <article class="control">
           <p class="kicker">State</p>
           <h3>Brand block</h3>
-          <p>The header opens with the application logo, the "SFT Studio Pro" name, and a v1.0 version pill. This identifies the application and the installed version.</p>
+          <p>The application logo, the name "SFT Studio Pro", and a "v1.0" version pill.</p>
         </article>
 
         <article class="control">
           <p class="kicker">State</p>
           <h3>Example counter</h3>
-          <p>The supplied screenshot shows a counter reading "115 ex." adjacent to the version pill. The supplied documentation does not describe how this counter is computed; treat it as a live dataset-size indicator displayed in the header.</p>
+          <p>A counter reading "115 ex." beside a colored dot. The supplied documentation does not describe how the counter is computed.</p>
         </article>
 
         <article class="control">
           <p class="kicker">Selection</p>
           <h3>Project selector</h3>
-          <p>Displays the active project name — the supplied screenshot shows a truncated project label. Use it to confirm which project the current session operates on. The supplied documentation does not describe its dropdown behavior.</p>
+          <p>Displays the active project name — the screenshot shows "Socrates (Athena…" in faded text — with a chevron control and a delete-style icon beside it. The supplied documentation does not describe the behavior of either adjoining icon.</p>
         </article>
 
         <article class="control">
           <p class="kicker">Action</p>
           <h3>+ New</h3>
-          <p>Starts a new project. Any confirmation dialogs it may present are not described in the supplied documentation.</p>
+          <p>A button labeled "+ New". The supplied documentation does not describe its behavior or any confirmation it may present.</p>
         </article>
 
         <article class="control">
           <p class="kicker">Action</p>
           <h3>Save</h3>
-          <p>Saves the current project state.</p>
+          <p>A button labeled "Save" with a floppy-disk icon.</p>
         </article>
 
         <article class="control">
           <p class="kicker">Action</p>
-          <h3>Support</h3>
-          <p>Opens the in-app App Support panel. In narrow layouts the header may render this label as the truncated "Supp…"; see <a href="section-11.html">Section 11</a> for the support workflow.</p>
+          <h3>Supp…</h3>
+          <p>The screenshot renders this label in truncated form, "Supp…". The App Support panel it relates to is documented in <a href="section-11.html">Section 11</a>.</p>
         </article>
 
         <article class="control">
           <p class="kicker">Action</p>
-          <h3>Account</h3>
-          <p>Opens account-related options. In narrow layouts the header may render this label as "Acco…". The exact account behaviors are not described in the supplied documentation.</p>
+          <h3>Acco…</h3>
+          <p>The screenshot renders this label in truncated form, "Acco…". The supplied documentation does not describe the account options it opens.</p>
         </article>
 
         <article class="control">
           <p class="kicker">Action</p>
-          <h3>Logout / exit</h3>
-          <p>The supplied screenshot shows an exit-style control near the session actions. The supplied documentation does not describe its exact behavior, so none is asserted here.</p>
+          <h3>Session icon button</h3>
+          <p>A final icon button showing a person glyph and a right-pointing arrow. The supplied documentation does not describe its behavior.</p>
         </article>
 
         <h2 id="s1-2">1.2 Numbered Workflow Navigation</h2>
-        <p>Beneath the header, the Studio exposes a numbered navigation that reflects the workflow order. Steps confirmed by the supplied documentation include Project Definition, Synthetic SFT Batch Generator, Document to SFT, Dataset Registry, and App Support. The Dataset Registry item displays a count badge noting how many batches currently exist in the registry (see <a href="section-7.html">Section 7</a>). Sections 2–10 of this manual map to the workflow's major stages; Section 11 covers the in-app support area.</p>
-
-        <div class="callout">
-          <p class="kicker">Note</p>
-          <p>Labels such as "Supp…" and "Acco…" are space-truncated renderings that appear when the header lacks horizontal room. The underlying destinations are Support and Account respectively.</p>
-        </div>
+        <p>Beneath the header, the Studio shows a numbered navigation of workflow steps. The supplied screenshots visibly confirm "5. Dataset Registry" — with a count badge showing the number of registry batches — and "6. App Support". The chapters of this manual follow the workflow order; the registry is documented in <a href="section-7.html">Section 7</a> and App Support in <a href="section-11.html">Section 11</a>.</p>
       </article>
     </main>
   </div>
