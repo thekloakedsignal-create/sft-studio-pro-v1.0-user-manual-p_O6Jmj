@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Section 2 · Project Definition — SFT Studio Pro Manual</title>
-  <meta name="description" content="SFT Studio Pro v1.0 manual, Section 2: define the project persona, system prompt, and target exemplar before any generation or conversion.">
+  <meta name="description" content="SFT Studio Pro v1.0 manual, Section 2: define the project persona, system prompt, and target exemplar before any generation or conversion takes place.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,43 +63,43 @@
         <p class="eyebrow">Section 2 · Project Definition</p>
         <h1>Project Definition</h1>
 
-        <p class="lede"><strong>Purpose of this section:</strong> define the project's persona, system prompt, and target exemplar before any generation or conversion takes place.</p>
+        <p class="lede"><strong>Purpose of this section:</strong> define the persona, system prompt, and target exemplar that anchor every later generation, conversion, alignment, and quality-assurance stage.</p>
 
-        <h2 id="s2-1">2.1 Why the Project Definition Comes First</h2>
-        <p>Every downstream stage in the Studio — synthetic batch generation, document-to-SFT conversion, optional TRiAD alignment, and quality assurance — operates against the project definition established here. Downstream screens display a "Locked Project" status to confirm that they are working from this definition rather than inviting redefinition at each stage.</p>
+        <h2 id="s2-1">2.1 The Project Definition Comes First</h2>
+        <p>The supplied documentation establishes the project definition as the anchor for the entire pipeline. Downstream screens — document conversion (Section 4), TRiAD alignment (Section 5), and quality assurance — display a "Locked Project" status rather than inviting you to redefine the project at each stage.</p>
 
-        <h2 id="s2-2">2.2 The Definition Fields</h2>
+        <h2 id="s2-2">2.2 Persona, System Prompt, and Target Exemplar</h2>
 
         <article class="control">
           <p class="kicker">Input</p>
-          <h3>Persona / target description</h3>
-          <p>Describes who or what the model should become: the character, role, or behavioral target the SFT examples will steer toward. The supplied material references named personas in the active project — for example, the "Socrates (Athenian Sage)" project shown in the exported screenshots.</p>
+          <h3>Persona</h3>
+          <p>The named identity the dataset should teach — a character, role, or behavioral target. The supplied screenshots show projects defined around personas such as "Socrates (Athenian Sage)."</p>
         </article>
 
         <article class="control">
           <p class="kicker">Input</p>
-          <h3>System prompt definition</h3>
-          <p>The standing instruction injected into training examples so the fine-tuned model inherits the project's behavioral frame. TRiAD alignment (Section 5) explicitly describes injecting the project-specific system prompt into pre-generated examples before import, which confirms the system prompt is treated as project-level data.</p>
+          <h3>System prompt</h3>
+          <p>The project-level instruction injected into training examples. TRiAD alignment (Section 5) explicitly describes injecting the project-specific system prompt into pre-generated examples before import, which confirms the system prompt is treated as project-level data.</p>
         </article>
 
         <article class="control">
           <p class="kicker">Input</p>
           <h3>Target exemplar</h3>
-          <p>A reference example of the ideal training item. The support conversation shown in <a href="section-11.html">Section 11</a> demonstrates that the Studio can coach reviewers on what makes a good target exemplar relative to the current persona — the definition is meant to be concrete, not abstract.</p>
+          <p>A concrete model of the ideal training example. The App Support conversation shown in <a href="section-11.html">Section 11</a> demonstrates that the Studio answers questions like "How should I write a good example for the target exemplar?" against the current project definition — the exemplar defines the target structure, not just a vague aspiration.</p>
         </article>
 
         <article class="control">
           <p class="kicker">State</p>
-          <h3>Lock status</h3>
-          <p>Once the project is established, downstream stages expose a "Locked Project" indicator — seen, for example, on the Document-to-SFT screen covered in <a href="section-4.html">Section 4</a>. The supplied documentation does not document a separate unlock action on those downstream screens, so this manual does not infer one.</p>
+          <h3>Locked Project</h3>
+          <p>The indicator shown on downstream screens — visible, for example, on the Document-to-SFT converter covered in <a href="section-4.html">Section 4</a>. The source does not document a separate unlock action on those downstream screens, so this manual does not infer one.</p>
         </article>
 
-        <h2 id="s2-3">2.3 Locked Project Status on Downstream Screens</h2>
-        <p>The "Locked Project" indicator is the mechanism by which later stages reference this definition. The conversion screen (Section 4) shows it explicitly, and the generation and alignment stages operate on the same principle: the definition is an input, not an editable field, at those stages.</p>
+        <h2 id="s2-3">2.3 Locked Project Status Downstream</h2>
+        <p>The "Locked Project" indicator is the mechanism by which later stages reference this definition: the definition is an input, not an editable field, on the conversion and alignment screens.</p>
 
         <div class="callout">
           <p class="kicker">Operating rule</p>
-          <p>Treat the project definition as the contract for everything produced afterward. Changing persona, system prompt, or exemplar after material has been generated invalidates the assumptions earlier batches were built on. The supplied documentation does not describe automated propagation of definition changes into existing batches.</p>
+          <p>Treat the project definition as the contract for everything produced afterward. The supplied documentation does not describe automated propagation of definition changes into existing batches.</p>
         </div>
       </article>
     </main>
