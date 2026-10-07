@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Section 7 · Image &amp; Data Registry — SFT Studio Pro Manual</title>
+  <meta name="description" content="SFT Studio Pro v1.0 manual, Section 7: the Dataset Registry — selecting QA-checked batches for inclusion in the final dataset.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <!-- Mobile top bar (visible < 1024px) -->
+  <header class="mobile-bar">
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Menu</span>
+    </button>
+    <span class="mobile-brand">SFT STUDIO PRO <em>v1.0</em></span>
+  </header>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <!-- Sidebar navigation -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <div class="brand-text">
+        <span class="brand-name">SFT Studio Pro</span>
+        <span class="brand-sub">v1.0 · User Manual</span>
+      </div>
+    </div>
+
+    <a class="home-link" href="index.html">← All sections</a>
+
+    <nav class="nav" aria-label="Manual sections">
+      <p class="nav-label">Contents</p>
+      <ol class="nav-list">
+        <li><a href="section-1.html"><span class="nav-num">01</span><span class="nav-title">Application Shell &amp; Navigation</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-2.html"><span class="nav-num">02</span><span class="nav-title">Project Definition</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-3.html"><span class="nav-num">03</span><span class="nav-title">Synthetic SFT Batch Generator</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-4.html"><span class="nav-num">04</span><span class="nav-title">Document-to-SFT Conversion</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-5.html"><span class="nav-num">05</span><span class="nav-title">Optional TRiAD Alignment</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-6.html"><span class="nav-num">06</span><span class="nav-title">AI Quality Assessor</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-7.html" class="active" aria-current="page"><span class="nav-num">07</span><span class="nav-title">Image &amp; Data Registry</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-8.html"><span class="nav-num">08</span><span class="nav-title">Compile</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-9.html"><span class="nav-num">09</span><span class="nav-title">Format</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-10.html"><span class="nav-num">10</span><span class="nav-title">Export</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-11.html"><span class="nav-num">11</span><span class="nav-title">Support &amp; Troubleshooting</span><span class="pill pill-done">Ready</span></a></li>
+      </ol>
+    </nav>
+
+    <p class="sidebar-foot">SFT Studio Pro · Documentation</p>
+  </aside>
+
+  <div class="page">
+    <main id="content">
+      <article class="doc" id="section-7">
+        <p class="eyebrow">Section 7 · Image &amp; Data Registry</p>
+        <h1>Image &amp; Data Registry</h1>
+
+        <p class="lede"><strong>Purpose of this section:</strong> select QA-checked registry batches for inclusion in the final dataset, and hand that selection to Compile.</p>
+
+        <h2 id="s7-1">7.1 What the Registry Holds</h2>
+        <p>The registry is the inventory of batches produced by synthetic generation (<a href="section-3.html">Section 3</a>), document conversion (<a href="section-4.html">Section 4</a>), and any pre-generated imports such as TRiAD alignment (<a href="section-5.html">Section 5</a>). Each batch carries provenance — an ID, a type, and a date — the same provenance surfaced on the batch card used by the AI Quality Assessor.</p>
+        <p>The registry screen states its purpose directly: <strong>"Dataset Registry — Select QA-checked batches to include in the final dataset."</strong></p>
+
+        <figure class="figure">
+          <div class="figure-media">
+            <img src="IMG_0085.png" data-fig alt="Dataset Registry header reading: Select QA-checked batches to include in the final dataset">
+          </div>
+          <figcaption><span class="fig-num"></span>The Dataset Registry header, visible within the export-state screenshot beneath the application's header chrome. <span class="src">Source screenshot: IMG_85, supplied documentation.</span></figcaption>
+        </figure>
+
+        <h2 id="s7-2">7.2 Selection and the QA Gate</h2>
+        <p>Selection is the registry's core action: only QA-checked batches should be included. The AI Quality Assessor (<a href="section-6.html">Section 6</a>) provides the audit evidence; approval there gates inclusion here.</p>
+
+        <article class="control">
+          <p class="kicker">Selection</p>
+          <h3>Select QA-checked batches</h3>
+          <p>Choose which registry batches feed the compiled dataset. The supplied documentation does not describe list sorting, filtering, or bulk-selection behaviors, so none are asserted here.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">State</p>
+          <h3>Batch-count badge</h3>
+          <p>The workflow navigation's registry item displays a badge noting how many batches exist. The supplied documentation does not specify whether the badge counts all batches or only selected ones; treat it as an existence counter.</p>
+        </article>
+
+        <h2 id="s7-3">7.3 Handoff to Compile</h2>
+        <p>Once the selection is right, proceed to Compile (<a href="section-8.html">Section 8</a>), which combines the registry's selected batches into one working dataset with an automatic validation partition. If the compile screen's batch count or totals look wrong, return here and correct the selection — Section 8's "What to Check" guidance says exactly this.</p>
+
+        <div class="callout">
+          <p class="kicker">Note</p>
+          <p>The supplied pages do not document registry editing, renaming, or deletion mechanics. This manual does not infer them.</p>
+        </div>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

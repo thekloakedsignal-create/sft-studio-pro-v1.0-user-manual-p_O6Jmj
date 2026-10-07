@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Section 10 · Export — SFT Studio Pro Manual</title>
+  <meta name="description" content="SFT Studio Pro v1.0 manual, Section 10: JSON and JSONL exports for the training set and the validation subset, plus export confirmation.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <!-- Mobile top bar (visible < 1024px) -->
+  <header class="mobile-bar">
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Menu</span>
+    </button>
+    <span class="mobile-brand">SFT STUDIO PRO <em>v1.0</em></span>
+  </header>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <!-- Sidebar navigation -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <div class="brand-text">
+        <span class="brand-name">SFT Studio Pro</span>
+        <span class="brand-sub">v1.0 · User Manual</span>
+      </div>
+    </div>
+
+    <a class="home-link" href="index.html">← All sections</a>
+
+    <nav class="nav" aria-label="Manual sections">
+      <p class="nav-label">Contents</p>
+      <ol class="nav-list">
+        <li><a href="section-1.html"><span class="nav-num">01</span><span class="nav-title">Application Shell &amp; Navigation</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-2.html"><span class="nav-num">02</span><span class="nav-title">Project Definition</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-3.html"><span class="nav-num">03</span><span class="nav-title">Synthetic SFT Batch Generator</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-4.html"><span class="nav-num">04</span><span class="nav-title">Document-to-SFT Conversion</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-5.html"><span class="nav-num">05</span><span class="nav-title">Optional TRiAD Alignment</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-6.html"><span class="nav-num">06</span><span class="nav-title">AI Quality Assessor</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-7.html"><span class="nav-num">07</span><span class="nav-title">Image &amp; Data Registry</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-8.html"><span class="nav-num">08</span><span class="nav-title">Compile</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-9.html"><span class="nav-num">09</span><span class="nav-title">Format</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-10.html" class="active" aria-current="page"><span class="nav-num">10</span><span class="nav-title">Export</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-11.html"><span class="nav-num">11</span><span class="nav-title">Support &amp; Troubleshooting</span><span class="pill pill-done">Ready</span></a></li>
+      </ol>
+    </nav>
+
+    <p class="sidebar-foot">SFT Studio Pro · Documentation</p>
+  </aside>
+
+  <div class="page">
+    <main id="content">
+      <article class="doc" id="section-10">
+        <p class="eyebrow">Section 10 · Export</p>
+        <h1>JSON and JSONL Exports</h1>
+
+        <p class="lede"><strong>Purpose of this section:</strong> export the compiled training set and the validation subset as JSON or JSONL, or copy the JSONL content directly to the clipboard. SFT Studio Pro provides both formats for both datasets.</p>
+
+        <h2 id="s10-1">10.1 Training Set</h2>
+
+        <figure class="figure">
+          <div class="figure-media">
+            <img src="IMG_0083.png" data-fig alt="Training and validation export controls with Export JSON, Export JSONL, and copy-to-clipboard actions">
+          </div>
+          <figcaption><span class="fig-num"></span>Training and validation export controls. <span class="src">Source screenshot: IMG_83, supplied documentation.</span></figcaption>
+        </figure>
+
+        <article class="control">
+          <p class="kicker">Action</p>
+          <h3>Export JSON</h3>
+          <p>Downloads the training set as JSON.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">Action</p>
+          <h3>Export JSONL</h3>
+          <p>Downloads the training set as JSONL.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">Action</p>
+          <h3>Copy Training JSONL to Clipboard</h3>
+          <p>Copies the training JSONL content to the clipboard.</p>
+        </article>
+
+        <h2 id="s10-2">10.2 Validator Subset</h2>
+        <p>The Validator Subset block shows the validation item count and provides the same three actions: <strong>Export JSON</strong>, <strong>Export JSONL</strong>, and <strong>Copy Validation JSONL to Clipboard</strong>.</p>
+
+        <h2 id="s10-3">10.3 JSON and JSONL</h2>
+        <p>JSON is convenient for browsing and inspection. JSONL stores one JSON record per line and is the practical machine-learning artifact for many training pipelines.</p>
+        <p>Keep the training and validation outputs clearly separated so the relationship between the two datasets stays obvious.</p>
+
+        <h2 id="s10-4">10.4 Machine-Readable Output</h2>
+        <p>The exported representation uses the template chosen at the Format stage. The sample below shows the ChatML structure — a short excerpt, not a full record:</p>
+
+        <pre class="code"><code>[
+  {
+    "text": "&lt;|im_start|&gt;user\nSocrates, surely you would agree that the pious is simply whatever the gods love?\n&lt;|im_end|&gt;\n&lt;|im_start|&gt;assistant\n&lt;think&gt;\nThe user proposes Euthyphro's definition: piety as what the gods love. Expose its flaws with leading questions; stay in persona.\n&lt;/think&gt;\n\nA swift and confident answer, my friend — almost too swift. But indulge an old man with a few small questions before we crown your definition…\n&lt;|im_end|&gt;"
+  }
+]</code></pre>
+
+        <figure class="figure">
+          <div class="figure-media">
+            <img src="IMG_0084.png" data-fig alt="Machine-readable dataset output showing a JSON array of ChatML-formatted text records">
+          </div>
+          <figcaption><span class="fig-num"></span>Machine-readable dataset output. <span class="src">Source screenshot: IMG_84, supplied documentation.</span></figcaption>
+        </figure>
+
+        <p>Inspect the exported representation at least once. Check the record count, schema, template tokens, role ordering, and expected validation split.</p>
+
+        <h2 id="s10-5">10.5 Export Confirmation</h2>
+
+        <figure class="figure">
+          <div class="figure-media">
+            <img src="IMG_0085.png" data-fig alt="Export confirmation toast reading Exported sft_training_dataset.json successfully in CHATML_TOKEN template format, above the Dataset Registry header">
+          </div>
+          <figcaption><span class="fig-num"></span>Export confirmation and application state. <span class="src">Source screenshot: IMG_85, supplied documentation.</span></figcaption>
+        </figure>
+
+        <p>The application can display a confirmation showing that the dataset was exported in the selected template format — the documented screenshot shows the message "Exported sft_training_dataset.json successfully in [CHATML_TOKEN] template format!" alongside the Dataset Registry header.</p>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

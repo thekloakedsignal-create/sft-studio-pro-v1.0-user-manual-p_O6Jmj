@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Section 8 · Compile — SFT Studio Pro Manual</title>
+  <meta name="description" content="SFT Studio Pro v1.0 manual, Section 8: Compile &amp; Export — combining selected batches and the automatic ~10% validation partition.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <!-- Mobile top bar (visible < 1024px) -->
+  <header class="mobile-bar">
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Menu</span>
+    </button>
+    <span class="mobile-brand">SFT STUDIO PRO <em>v1.0</em></span>
+  </header>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <!-- Sidebar navigation -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <div class="brand-text">
+        <span class="brand-name">SFT Studio Pro</span>
+        <span class="brand-sub">v1.0 · User Manual</span>
+      </div>
+    </div>
+
+    <a class="home-link" href="index.html">← All sections</a>
+
+    <nav class="nav" aria-label="Manual sections">
+      <p class="nav-label">Contents</p>
+      <ol class="nav-list">
+        <li><a href="section-1.html"><span class="nav-num">01</span><span class="nav-title">Application Shell &amp; Navigation</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-2.html"><span class="nav-num">02</span><span class="nav-title">Project Definition</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-3.html"><span class="nav-num">03</span><span class="nav-title">Synthetic SFT Batch Generator</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-4.html"><span class="nav-num">04</span><span class="nav-title">Document-to-SFT Conversion</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-5.html"><span class="nav-num">05</span><span class="nav-title">Optional TRiAD Alignment</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-6.html"><span class="nav-num">06</span><span class="nav-title">AI Quality Assessor</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-7.html"><span class="nav-num">07</span><span class="nav-title">Image &amp; Data Registry</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-8.html" class="active" aria-current="page"><span class="nav-num">08</span><span class="nav-title">Compile</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-9.html"><span class="nav-num">09</span><span class="nav-title">Format</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-10.html"><span class="nav-num">10</span><span class="nav-title">Export</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-11.html"><span class="nav-num">11</span><span class="nav-title">Support &amp; Troubleshooting</span><span class="pill pill-done">Ready</span></a></li>
+      </ol>
+    </nav>
+
+    <p class="sidebar-foot">SFT Studio Pro · Documentation</p>
+  </aside>
+
+  <div class="page">
+    <main id="content">
+      <article class="doc" id="section-8">
+        <p class="eyebrow">Section 8 · Compile</p>
+        <h1>Compile &amp; Export SFT</h1>
+
+        <p class="lede"><strong>Purpose of this section:</strong> combine the QA-checked batches selected in the Dataset Registry into one working dataset, automatically partition approximately 10% into a validation subset, and see the real size of the dataset being prepared for training.</p>
+
+        <h2 id="s8-1">8.1 Selected Dataset Breakdown</h2>
+        <p>Compile &amp; Export is where the QA-checked batches selected in the Dataset Registry become one working dataset. The Studio combines the selected batches and automatically partitions approximately 10% into a validation subset, leaving the remainder as the training set. This is the first screen where you can see the actual size of the dataset you are preparing for training.</p>
+
+        <figure class="figure">
+          <div class="figure-media">
+            <img src="IMG_0080.png" data-fig alt="Compile &amp; Export SFT overview showing included batches 5, total selected SFTs 115, training set size 103, and validation set size 12">
+          </div>
+          <figcaption><span class="fig-num"></span>Compile &amp; Export SFT overview and selected dataset breakdown. <span class="src">Source screenshot: IMG_80, supplied documentation.</span></figcaption>
+        </figure>
+
+        <article class="control">
+          <p class="kicker">Result</p>
+          <h3>Included Batches</h3>
+          <p>How many Registry batches are being compiled. The documented example shows 5.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">Result</p>
+          <h3>Total Selected SFTs</h3>
+          <p>The combined number of examples across the included batches. The documented example shows 115.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">Result</p>
+          <h3>Training Set Size</h3>
+          <p>The remainder after the validation partition. The documented example shows 103 examples.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">Result</p>
+          <h3>Validation Set Size (10%)</h3>
+          <p>The Studio automatically partitions approximately 10% into a validation subset. The documented example shows 12 examples. You do not create this subset manually.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">Selection</p>
+          <h3>Target Export Template Format</h3>
+          <p>The template the dataset will be formatted for; the documented example shows ChatML. Applying the template is covered in <a href="section-9.html">Section 9</a>.</p>
+        </article>
+
+        <h2 id="s8-2">8.2 What the Compile Stage Does</h2>
+        <p>Compile assembles the selected material. It does not require you to manually create the validation subset. The Studio shows the resulting counts before export so you can see what will be produced.</p>
+
+        <h2 id="s8-3">8.3 What to Check</h2>
+        <p>Look at the number of included batches and total examples. If the selection is wrong, return to the Dataset Registry (<a href="section-7.html">Section 7</a>) and change the selected batches. If the selection is right, continue to formatting and export.</p>
+        <p>The compile stage is also a useful composition check. A collection of individually good batches can still become unbalanced when combined, so this is a good place to notice an obviously dominant or repetitive batch.</p>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

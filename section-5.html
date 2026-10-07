@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Section 5 · Optional TRiAD Alignment — SFT Studio Pro Manual</title>
+  <meta name="description" content="SFT Studio Pro v1.0 manual, Section 5: optional TRiAD (Freedom/Truth/Kindness) alignment — the pre-generated batch import panel, template type, import sizes, and run/skip controls.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <!-- Mobile top bar (visible < 1024px) -->
+  <header class="mobile-bar">
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Menu</span>
+    </button>
+    <span class="mobile-brand">SFT STUDIO PRO <em>v1.0</em></span>
+  </header>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <!-- Sidebar navigation -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <div class="brand-text">
+        <span class="brand-name">SFT Studio Pro</span>
+        <span class="brand-sub">v1.0 · User Manual</span>
+      </div>
+    </div>
+
+    <a class="home-link" href="index.html">← All sections</a>
+
+    <nav class="nav" aria-label="Manual sections">
+      <p class="nav-label">Contents</p>
+      <ol class="nav-list">
+        <li><a href="section-1.html"><span class="nav-num">01</span><span class="nav-title">Application Shell &amp; Navigation</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-2.html"><span class="nav-num">02</span><span class="nav-title">Project Definition</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-3.html"><span class="nav-num">03</span><span class="nav-title">Synthetic SFT Batch Generator</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-4.html"><span class="nav-num">04</span><span class="nav-title">Document-to-SFT Conversion</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-5.html" class="active" aria-current="page"><span class="nav-num">05</span><span class="nav-title">Optional TRiAD Alignment</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-6.html"><span class="nav-num">06</span><span class="nav-title">AI Quality Assessor</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-7.html"><span class="nav-num">07</span><span class="nav-title">Image &amp; Data Registry</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-8.html"><span class="nav-num">08</span><span class="nav-title">Compile</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-9.html"><span class="nav-num">09</span><span class="nav-title">Format</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-10.html"><span class="nav-num">10</span><span class="nav-title">Export</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-11.html"><span class="nav-num">11</span><span class="nav-title">Support &amp; Troubleshooting</span><span class="pill pill-done">Ready</span></a></li>
+      </ol>
+    </nav>
+
+    <p class="sidebar-foot">SFT Studio Pro · Documentation</p>
+  </aside>
+
+  <div class="page">
+    <main id="content">
+      <article class="doc" id="section-5">
+        <p class="eyebrow">Section 5 · Optional TRiAD Alignment</p>
+        <h1>Optional TRiAD Ethics Alignment</h1>
+
+        <p class="lede"><strong>Purpose of this section:</strong> a button-by-button guide to the optional Freedom, Truth, and Kindness alignment stage. TRiAD alignment is an optional stage built around a balanced FTK model: Freedom, Truth, and Kindness. The source documentation describes FTK as an equilibrium rather than a hierarchy in which one value automatically outranks the others. The purpose of this stage is to add pre-generated alignment examples to the project — it is not a replacement for defining the target behavior, and not a substitute for the normal review and quality-assurance pipeline.</p>
+
+        <h2 id="s5-1">5.1 What TRiAD Alignment Is</h2>
+        <p>TRiAD alignment adds pre-generated Freedom/Truth/Kindness examples to the project. According to the source documentation, the FTK values are held in equilibrium: no single value automatically outranks the others.</p>
+
+        <div class="callout">
+          <p class="kicker">Warning from the source documentation</p>
+          <p>The documentation specifically warns against treating TRiAD as a magical moral coating for a poorly designed dataset. Use it deliberately when the training objective genuinely includes conversational judgment, moral tradeoffs, integrity, or relational behavior.</p>
+        </div>
+
+        <h2 id="s5-2">5.2 The TRiAD Alignment Panel</h2>
+
+        <figure class="figure">
+          <div class="figure-media">
+            <img src="IMG_0067.png" data-fig alt="TRiAD Alignment panel with the PRE-GENERATED label, the explanation that the option is for alignment only and not file uploads, and the automated script behavior note">
+          </div>
+          <figcaption><span class="fig-num"></span>TRiAD Alignment panel. <span class="src">Source screenshot: IMG_67, supplied documentation page 31.</span></figcaption>
+        </figure>
+
+        <p>The first screen identifies the feature as TRiAD Alignment and labels the source as PRE-GENERATED. The panel states that its purpose is to add pre-generated TRiAD alignment examples to the project.</p>
+
+        <h2 id="s5-3">5.3 PRE-GENERATED</h2>
+        <p>The PRE-GENERATED label identifies the alignment material as pre-generated rather than material the user is authoring one example at a time in this panel. The documentation says the user chooses a batch size and template, after which the system can inject the project-specific system prompt or project context into those pre-generated examples before importing them.</p>
+        <p>The visible panel also explains that this option is for alignment only, not file uploads. In other words, this screen is not the document-ingestion workflow covered in <a href="section-4.html">Section 4</a>.</p>
+
+        <h2 id="s5-4">5.4 Choose a Batch Size and Template</h2>
+        <p>The panel instructs the user to choose a batch size and template for the pre-generated TRiAD alignment dataset. The source documentation does not provide a prose list of all available sizes; however, the second screenshot visibly shows the available Maximum Import Size choices of 150 Examples, 300 Examples, and 750 Examples, with the 150-example option selected.</p>
+
+        <h2 id="s5-5">5.5 Automated Script Behavior</h2>
+
+        <figure class="figure">
+          <div class="figure-media">
+            <img src="IMG_0068.png" data-fig alt="TRiAD alignment controls showing the Batch Template Type marked LOCKED (ChatML), the Maximum Import Size choices of 150, 300, and 750 examples, and the Run Script and Import button beside the note that the step may be skipped entirely">
+          </div>
+          <figcaption><span class="fig-num"></span>TRiAD alignment controls and import behavior. <span class="src">Source screenshot: IMG_68, supplied documentation page 32.</span></figcaption>
+        </figure>
+
+        <article class="control">
+          <p class="kicker">State</p>
+          <h3>Batch Template Type: LOCKED (ChatML)</h3>
+          <p>The screenshot shows the batch template type marked LOCKED with ChatML as the locked value. The template is fixed for the import; it is not an editable choice on this panel.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">Selection</p>
+          <h3>Maximum Import Size</h3>
+          <p>The screenshot shows three import-size choices — 150 Examples, 300 Examples, and 750 Examples — with 150 selected. These determine how many pre-generated alignment examples are imported.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">Action</p>
+          <h3>Run Script and Import</h3>
+          <p>The visible action button executes the automated script described by the panel: it injects the project-specific system prompt or project context into the pre-generated TRiAD examples and imports them into the project. The source documentation describes this injection behavior explicitly.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">State</p>
+          <h3>Optional and skippable</h3>
+          <p>The panel notes that this step may be skipped entirely. TRiAD alignment is optional; skipping it does not block the rest of the pipeline.</p>
+        </article>
+
+        <p>Like every other batch-producing stage, imported TRiAD material still flows through the Dataset Registry and the AI Quality Assessor before it can be included in the compiled dataset.</p>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

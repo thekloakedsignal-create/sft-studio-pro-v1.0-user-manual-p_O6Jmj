@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Section 6 · AI Quality Assessor — SFT Studio Pro Manual</title>
+  <meta name="description" content="SFT Studio Pro v1.0 manual, Section 6: batch-level QA — audit score, flagged items, regenerate-flagged, deduplicate, and approve/reject.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <!-- Mobile top bar (visible < 1024px) -->
+  <header class="mobile-bar">
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Menu</span>
+    </button>
+    <span class="mobile-brand">SFT STUDIO PRO <em>v1.0</em></span>
+  </header>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <!-- Sidebar navigation -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <div class="brand-text">
+        <span class="brand-name">SFT Studio Pro</span>
+        <span class="brand-sub">v1.0 · User Manual</span>
+      </div>
+    </div>
+
+    <a class="home-link" href="index.html">← All sections</a>
+
+    <nav class="nav" aria-label="Manual sections">
+      <p class="nav-label">Contents</p>
+      <ol class="nav-list">
+        <li><a href="section-1.html"><span class="nav-num">01</span><span class="nav-title">Application Shell &amp; Navigation</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-2.html"><span class="nav-num">02</span><span class="nav-title">Project Definition</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-3.html"><span class="nav-num">03</span><span class="nav-title">Synthetic SFT Batch Generator</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-4.html"><span class="nav-num">04</span><span class="nav-title">Document-to-SFT Conversion</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-5.html"><span class="nav-num">05</span><span class="nav-title">Optional TRiAD Alignment</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-6.html" class="active" aria-current="page"><span class="nav-num">06</span><span class="nav-title">AI Quality Assessor</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-7.html"><span class="nav-num">07</span><span class="nav-title">Image &amp; Data Registry</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-8.html"><span class="nav-num">08</span><span class="nav-title">Compile</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-9.html"><span class="nav-num">09</span><span class="nav-title">Format</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-10.html"><span class="nav-num">10</span><span class="nav-title">Export</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-11.html"><span class="nav-num">11</span><span class="nav-title">Support &amp; Troubleshooting</span><span class="pill pill-done">Ready</span></a></li>
+      </ol>
+    </nav>
+
+    <p class="sidebar-foot">SFT Studio Pro · Documentation</p>
+  </aside>
+
+  <div class="page">
+    <main id="content">
+      <article class="doc" id="section-6">
+        <p class="eyebrow">Section 6 · AI Quality Assessor</p>
+        <h1>AI Quality Assessor</h1>
+
+        <p class="lede"><strong>Purpose of this section:</strong> a button-by-button guide to auditing batches, interpreting QA flags, repairing defective examples, and deciding when a batch is ready to approve.</p>
+
+        <h2 id="s6-1">6.1 What the AI Quality Assessor Does</h2>
+        <p>The AI Quality Assessor is the Studio's batch-level quality checkpoint. It evaluates every example in a selected registry batch and looks for problems that can be difficult to catch by hand across a larger dataset. The source documentation identifies checks for full-format validity, template consistency, schema structure, persona/target consistency, and other indicators of corrupted or drifting examples.</p>
+        <p>The assessor produces a batch-level audit score and reports how many examples passed and how many were flagged. A flag is accompanied by an explanation so the reviewer can inspect the actual problem instead of treating the score as an unexplained red number.</p>
+
+        <div class="callout">
+          <p class="kicker">Operating rule</p>
+          <p>QA is diagnostic, not sovereign. The documentation explicitly leaves the final decision to the human reviewer. A flagged example may be edited, rejected, or retained when the reviewer determines that the warning is not material.</p>
+        </div>
+
+        <h2 id="s6-2">6.2 Select the Batch to Audit</h2>
+        <p>The AI Quality Assessor begins with the <strong>ACTIVE REGISTRY BATCH</strong> selector. The assessor works against a batch that is already in the registry, rather than auditing an arbitrary text field or an untracked draft.</p>
+
+        <figure class="figure">
+          <div class="figure-media">
+            <img src="IMG_0069.png" data-fig alt="AI Quality Assessor before an audit, showing the ACTIVE REGISTRY BATCH selector with a batch card, ID, type, and date, and the Audit Score area reading N/A / Needs Analysis">
+          </div>
+          <figcaption><span class="fig-num"></span>AI Quality Assessor before an audit. <span class="src">Source screenshot: IMG_69, supplied documentation page 35.</span></figcaption>
+        </figure>
+
+        <article class="control">
+          <p class="kicker">Selection</p>
+          <h3>ACTIVE REGISTRY BATCH</h3>
+          <p>Use this selector to choose the registry batch that the assessor should evaluate. The screenshot shows a selected batch displayed in a purple dropdown-style control. The source documentation does not specify additional filtering behavior, keyboard shortcuts, or sorting rules for this selector, so those behaviors are not asserted here.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">State</p>
+          <h3>Audit Score: N/A / Needs Analysis</h3>
+          <p>Before an audit has been run for the selected batch, the score area can display N/A with the status Needs Analysis. This means the batch has not yet received the audit result represented by the score display.</p>
+        </article>
+
+        <p>The batch card below the score identifies the selected batch and exposes provenance information such as its ID, type, and date. The copy icon shown beside the ID is visible in the interface, but the supplied documentation does not explicitly describe its action. Treat it as an interface control whose exact behavior is not documented here rather than assigning it an undocumented purpose.</p>
+
+        <h2 id="s6-3">6.3 Understanding the Audit Result</h2>
+
+        <figure class="figure">
+          <div class="figure-media">
+            <img src="IMG_0071.png" data-fig alt="Quality audit result showing 89% audit score with Passed Quality Audit status, plus passed count 4, flagged items 1, and redundant entries 0">
+          </div>
+          <figcaption><span class="fig-num"></span>Quality audit result and score. <span class="src">Source screenshot: IMG_71, supplied documentation.</span></figcaption>
+        </figure>
+
+        <p>The completed audit presents a percentage score together with a pass/fail status. The documented example shows an 89% audit score with the status <strong>Passed Quality Audit</strong>, a passed count of 4, flagged items 1, and redundant entries 0. Read the score together with the counts: a batch can pass overall while still containing flagged items that deserve individual attention.</p>
+
+        <h2 id="s6-4">6.4 Acting on the Result</h2>
+        <p>The documentation for this stage covers three remedies once an audit completes: regenerating flagged items, deduplicating redundant entries, and approving or rejecting the batch. These map directly onto the three counts the audit reports.</p>
+
+        <article class="control">
+          <p class="kicker">Action</p>
+          <h3>Regenerate flagged items</h3>
+          <p>Repair path for examples the audit flagged. Use regeneration to replace defective examples rather than shipping them. The fine-grained regeneration mechanics are not described in the supplied material, so none are asserted here.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">Action</p>
+          <h3>Deduplicate redundant entries</h3>
+          <p>The audit counts redundant entries separately from flagged items; the documented example shows redundant entries 0. Where redundancy is found, deduplication removes it before the batch is approved.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">Action</p>
+          <h3>Approve / Reject</h3>
+          <p>The final human decision on the batch. Approval makes the batch eligible for selection in the Dataset Registry (Section 7); the callout in Section 6.1 applies — the reviewer decides, the score only informs.</p>
+        </article>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

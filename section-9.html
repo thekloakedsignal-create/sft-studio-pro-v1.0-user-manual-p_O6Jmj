@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Section 9 · Format — SFT Studio Pro Manual</title>
+  <meta name="description" content="SFT Studio Pro v1.0 manual, Section 9: target export templates, applying ChatML formatting, and the formatted output preview.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <!-- Mobile top bar (visible < 1024px) -->
+  <header class="mobile-bar">
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Menu</span>
+    </button>
+    <span class="mobile-brand">SFT STUDIO PRO <em>v1.0</em></span>
+  </header>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <!-- Sidebar navigation -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <div class="brand-text">
+        <span class="brand-name">SFT Studio Pro</span>
+        <span class="brand-sub">v1.0 · User Manual</span>
+      </div>
+    </div>
+
+    <a class="home-link" href="index.html">← All sections</a>
+
+    <nav class="nav" aria-label="Manual sections">
+      <p class="nav-label">Contents</p>
+      <ol class="nav-list">
+        <li><a href="section-1.html"><span class="nav-num">01</span><span class="nav-title">Application Shell &amp; Navigation</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-2.html"><span class="nav-num">02</span><span class="nav-title">Project Definition</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-3.html"><span class="nav-num">03</span><span class="nav-title">Synthetic SFT Batch Generator</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-4.html"><span class="nav-num">04</span><span class="nav-title">Document-to-SFT Conversion</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-5.html"><span class="nav-num">05</span><span class="nav-title">Optional TRiAD Alignment</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-6.html"><span class="nav-num">06</span><span class="nav-title">AI Quality Assessor</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-7.html"><span class="nav-num">07</span><span class="nav-title">Image &amp; Data Registry</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-8.html"><span class="nav-num">08</span><span class="nav-title">Compile</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-9.html" class="active" aria-current="page"><span class="nav-num">09</span><span class="nav-title">Format</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-10.html"><span class="nav-num">10</span><span class="nav-title">Export</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-11.html"><span class="nav-num">11</span><span class="nav-title">Support &amp; Troubleshooting</span><span class="pill pill-done">Ready</span></a></li>
+      </ol>
+    </nav>
+
+    <p class="sidebar-foot">SFT Studio Pro · Documentation</p>
+  </aside>
+
+  <div class="page">
+    <main id="content">
+      <article class="doc" id="section-9">
+        <p class="eyebrow">Section 9 · Format</p>
+        <h1>Template Formatting &amp; Output Preview</h1>
+
+        <p class="lede"><strong>Purpose of this section:</strong> apply a target export template (such as ChatML) to the approved dataset, and inspect the formatted output preview before export. Formatting changes how an approved dataset is represented for a particular training pipeline — you do not regenerate the underlying examples just because the target format changes.</p>
+
+        <h2 id="s9-1">9.1 Target Export Template</h2>
+
+        <figure class="figure">
+          <div class="figure-media">
+            <img src="IMG_0081.png" data-fig alt="Target export template format selector with ChatML Instruction selected">
+          </div>
+          <figcaption><span class="fig-num"></span>Target export template selection. <span class="src">Source screenshot: IMG_81, supplied documentation.</span></figcaption>
+        </figure>
+
+        <article class="control">
+          <p class="kicker">Selection</p>
+          <h3>Target Export Template Format</h3>
+          <p>The template selector. The documented example shows ChatML_TOKEN with ChatML Instruction selected. The description beneath the selector explains the representation: in the ChatML instruction variant, role boundaries use special tokens such as &lt;|im_start|&gt; and &lt;|im_end|&gt;.</p>
+        </article>
+
+        <h2 id="s9-2">9.2 Apply the Template</h2>
+
+        <article class="control">
+          <p class="kicker">Action</p>
+          <h3>Format Dataset to ChatML Instruction</h3>
+          <p>Applies the selected template to the dataset.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">Action</p>
+          <h3>Apply to Batches</h3>
+          <p>Runs the formatting operation on the selected batches.</p>
+        </article>
+
+        <h2 id="s9-3">9.3 Formatted Dataset Output Preview</h2>
+
+        <figure class="figure">
+          <div class="figure-media">
+            <img src="IMG_0082.png" data-fig alt="Formatted dataset output preview showing a JSONL single-line record, a pretty JSON structure, and a validation dataset variant">
+          </div>
+          <figcaption><span class="fig-num"></span>Formatted Dataset Output Preview. <span class="src">Source screenshot: IMG_82, supplied documentation.</span></figcaption>
+        </figure>
+
+        <p>The preview shows how the chosen template represents the data. The panel presents variants including a JSONL single-line record, a pretty JSON structure, and a validation dataset view. Use it to inspect role boundaries, special tokens, and the overall structure before exporting.</p>
+
+        <h2 id="s9-4">9.4 Copy JSON Preview</h2>
+
+        <article class="control">
+          <p class="kicker">Action</p>
+          <h3>Copy JSON Preview</h3>
+          <p>Copies the displayed preview so you can inspect it or paste it elsewhere.</p>
+        </article>
+
+        <div class="callout">
+          <p class="kicker">Workflow</p>
+          <p>Choose a template → apply it → inspect the preview → export (<a href="section-10.html">Section 10</a>).</p>
+        </div>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Section 11 · Support &amp; Troubleshooting — SFT Studio Pro Manual</title>
+  <meta name="description" content="SFT Studio Pro v1.0 manual, Section 11: the Studio Expert / App Support panel, quick-help prompts, and troubleshooting routes.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <!-- Mobile top bar (visible < 1024px) -->
+  <header class="mobile-bar">
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Menu</span>
+    </button>
+    <span class="mobile-brand">SFT STUDIO PRO <em>v1.0</em></span>
+  </header>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <!-- Sidebar navigation -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <div class="brand-text">
+        <span class="brand-name">SFT Studio Pro</span>
+        <span class="brand-sub">v1.0 · User Manual</span>
+      </div>
+    </div>
+
+    <a class="home-link" href="index.html">← All sections</a>
+
+    <nav class="nav" aria-label="Manual sections">
+      <p class="nav-label">Contents</p>
+      <ol class="nav-list">
+        <li><a href="section-1.html"><span class="nav-num">01</span><span class="nav-title">Application Shell &amp; Navigation</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-2.html"><span class="nav-num">02</span><span class="nav-title">Project Definition</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-3.html"><span class="nav-num">03</span><span class="nav-title">Synthetic SFT Batch Generator</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-4.html"><span class="nav-num">04</span><span class="nav-title">Document-to-SFT Conversion</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-5.html"><span class="nav-num">05</span><span class="nav-title">Optional TRiAD Alignment</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-6.html"><span class="nav-num">06</span><span class="nav-title">AI Quality Assessor</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-7.html"><span class="nav-num">07</span><span class="nav-title">Image &amp; Data Registry</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-8.html"><span class="nav-num">08</span><span class="nav-title">Compile</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-9.html"><span class="nav-num">09</span><span class="nav-title">Format</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-10.html"><span class="nav-num">10</span><span class="nav-title">Export</span><span class="pill pill-done">Ready</span></a></li>
+        <li><a href="section-11.html" class="active" aria-current="page"><span class="nav-num">11</span><span class="nav-title">Support &amp; Troubleshooting</span><span class="pill pill-done">Ready</span></a></li>
+      </ol>
+    </nav>
+
+    <p class="sidebar-foot">SFT Studio Pro · Documentation</p>
+  </aside>
+
+  <div class="page">
+    <main id="content">
+      <article class="doc" id="section-11">
+        <p class="eyebrow">Section 11 · Support &amp; Troubleshooting</p>
+        <h1>Studio Expert / App Support</h1>
+
+        <p class="lede"><strong>Purpose of this section:</strong> use the in-app Studio Expert to ask questions about SFT Studio Pro and the project you are currently working on, and route common issues to the right manual section. Studio Expert is designed to help you understand the application and make decisions inside the workflow without leaving the studio.</p>
+
+        <h2 id="s11-1">11.1 The App Support Panel</h2>
+        <p>Studio Expert is the in-app support area for asking questions about SFT Studio Pro and the current project. This section explains what the support area is for, what kinds of questions it can handle, and how to use the controls shown in the interface.</p>
+
+        <figure class="figure">
+          <div class="figure-media">
+            <img src="IMG_0086.png" data-fig alt="App Support panel empty state with the prompt How can I help you with SFT Studio Pro? and quick-help prompt chips">
+          </div>
+          <figcaption><span class="fig-num"></span>The App Support panel in its empty state. <span class="src">Source screenshot: IMG_86, supplied documentation.</span></figcaption>
+        </figure>
+
+        <p>The empty state presents the prompt "How can I help you with SFT Studio Pro?" with helper text listing supported topics: defining personas and system prompts, generating examples, document conversion, quality audits, and exporting your dataset. The panel header shows the label "App Support" with the placeholder-level text "Ask anything about u…" — the supplied screenshot truncates this string, and the full wording is not documented.</p>
+
+        <article class="control">
+          <p class="kicker">Action</p>
+          <h3>Quick-help prompt chips</h3>
+          <p>Pre-written prompts that seed common questions. The screenshot shows chips such as "How do I use SFT Studio". Selecting a chip starts the conversation.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">Action</p>
+          <h3>Header reset control</h3>
+          <p>A refresh-style control appears in the panel header. Its exact behavior — for example, whether it clears the current conversation — is not described in the supplied documentation, so treat it as present but undocumented.</p>
+        </article>
+
+        <article class="control">
+          <p class="kicker">Input</p>
+          <h3>Message composer</h3>
+          <p>The free-text field at the bottom of the panel, used to ask your own question when the quick-help chips do not cover it.</p>
+        </article>
+
+        <h2 id="s11-2">11.2 A Worked Example</h2>
+
+        <figure class="figure">
+          <div class="figure-media">
+            <img src="IMG_0088.png" data-fig alt="App Support conversation showing a user question about writing a good target exemplar and a numbered assistant answer referencing the Socrates project">
+          </div>
+          <figcaption><span class="fig-num"></span>App Support conversation with project-grounded guidance. <span class="src">Source screenshot: IMG_88, supplied documentation.</span></figcaption>
+        </figure>
+
+        <p>The conversation screenshot shows a user asking "How should I write a good example for the target exemplar?" and the assistant answering in the context of the current project — "Socrates (Athenian Sage)" — with numbered guidance such as "1. User message: Present a clear opinion or claim to …". The assistant grounds its advice in the active project definition rather than offering generic advice.</p>
+
+        <h2 id="s11-3">11.3 Troubleshooting Routes</h2>
+        <p>Route problems to the stage that owns them:</p>
+        <ul>
+          <li>Quality questions and flagged examples → the AI Quality Assessor (<a href="section-6.html">Section 6</a>).</li>
+          <li>Batch selection issues → the Image &amp; Data Registry (<a href="section-7.html">Section 7</a>).</li>
+          <li>Export counts or totals that look wrong → Compile (<a href="section-8.html">Section 8</a>); recheck the selection as described in Section 8.3.</li>
+          <li>Template and representation questions → Format (<a href="section-9.html">Section 9</a>).</li>
+          <li>Understanding a screen or choosing a control → the Studio Expert panel itself.</li>
+        </ul>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
