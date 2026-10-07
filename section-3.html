@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Section 3 · Synthetic SFT Batch Generator — SFT Studio Pro Manual</title>
-  <meta name="description" content="SFT Studio Pro v1.0 manual, Section 3: generate synthetic candidate SFT batches from the locked project definition and route them to review.">
+  <meta name="description" content="SFT Studio Pro v1.0 manual, Section 3: generate synthetic candidate SFT batches from the locked project definition and route them to QA review.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,16 +69,16 @@
         <p>The generator produces synthetic SFT examples in batches rather than one item at a time. A batch is the unit the rest of the pipeline understands: it is registered in the Dataset Registry (<a href="section-7.html">Section 7</a>), audited by the AI Quality Assessor (<a href="section-6.html">Section 6</a>), and ultimately selected for compile (<a href="section-8.html">Section 8</a>).</p>
         <p>Generation draws on the locked project definition documented in <a href="section-2.html">Section 2</a> — persona, system prompt, and target exemplar — so each candidate example inherits the project's behavioral frame.</p>
 
-        <h2 id="s3-2">3.2 Generated Material Is Always Candidate Data</h2>
-        <p>The Studio treats generator output as candidate data pending human review. Nothing produced at this stage is final: the QA stage evaluates the batch, and only QA-checked batches are eligible for inclusion in the compiled dataset (Sections 7–8).</p>
+        <h2 id="s3-2">3.2 Generated Material Is Candidate Data</h2>
+        <p>The Studio treats generator output as candidate data pending human review. Nothing produced at this stage is final: the batch is audited by the AI Quality Assessor, and only QA-checked batches are eligible for inclusion in the compiled dataset.</p>
 
         <div class="callout">
           <p class="kicker">Operating rule</p>
-          <p>Do not route generated material straight to export. The pipeline is deliberately staged: generate → review → audit → select → compile → format → export.</p>
+          <p>Do not route generated material straight to export. The pipeline is deliberately staged: generate → audit → select → compile → format → export.</p>
         </div>
 
         <h2 id="s3-3">3.3 Relationship to the Registry</h2>
-        <p>Every generated batch enters the Dataset Registry with provenance information — an ID, a type, and a date — the same provenance surfaced on the batch card shown by the AI Quality Assessor. The registry's batch-count badge on the workflow navigation reflects how many batches currently exist.</p>
+        <p>Every generated batch enters the Dataset Registry with provenance information — an ID, a type, and a date — the same provenance surfaced on the batch card used by the AI Quality Assessor. The registry's batch-count badge on the workflow navigation reflects how many batches currently exist.</p>
         <p>The supplied documentation does not specify the generator's prompt controls, sampling parameters, or batch-size options for this stage. Those mechanics are not described in the source material, and they are not invented here.</p>
       </article>
     </main>
