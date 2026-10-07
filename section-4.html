@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Section 4 · Document-to-SFT Conversion — SFT Studio Pro Manual</title>
-  <meta name="description" content="SFT Studio Pro v1.0 manual, Section 4: document upload and raw-text entry, extraction, the Locked Project status, and conversion into candidate SFT data.">
+  <meta name="description" content="SFT Studio Pro v1.0 manual, Section 4: document upload and raw-text entry, extraction results, the Locked Project status, and conversion into candidate SFT data.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,7 +63,7 @@
         <p class="eyebrow">Section 4 · Document-to-SFT Conversion</p>
         <h1>Document-to-SFT Conversion</h1>
 
-        <p class="lede"><strong>Purpose of this section:</strong> a button-by-button guide to turning existing source material into candidate supervised fine-tuning examples. Document conversion lets you start with existing source material instead of manually constructing every training example. The Studio treats the converted material as <em>candidate</em> SFT data. Conversion is therefore an extraction-and-synthesis stage, not the final quality gate. The source documentation specifically warns that conversion can introduce malformed joins, missing context, duplicated material, or examples whose target behavior is unclear; converted batches go through the same review and QA process used for generated material.</p>
+        <p class="lede"><strong>Purpose of this section:</strong> a button-by-button guide to turning existing source material into candidate supervised fine-tuning examples. Document conversion lets you start with existing source material instead of manually constructing every training example. The Studio treats the converted material as <em>candidate</em> SFT data. Conversion is therefore an extraction-and-synthesis stage, not the final quality gate. The source documentation specifically warns that conversion can introduce malformed joins, missing context, duplicated material, or examples whose target behavior is unclear; converted batches go through the same review and quality-assurance process used for generated material.</p>
 
         <h2 id="s4-1">4.1 Entering the Document-to-SFT Workflow</h2>
         <p>The conversion workflow is reached from the Studio navigation using the "2. Document to SFT" control. The converter is designed for raw technical texts, manuals, literature, and transcripts that can be transformed into structured fine-tuning conversational logs. The screen also shows the project as Locked. This matters because the conversion screen works from the locked project definition rather than inviting you to redefine the project here.</p>
@@ -111,7 +111,7 @@
         <article class="control">
           <p class="kicker">Result</p>
           <h3>Extraction result</h3>
-          <p>After a document is supplied, the converter reports the extraction outcome — the supplied screenshot shows successfully extracted pages together with character counts. Use this report to confirm the source was actually read before converting.</p>
+          <p>After a document is supplied, the converter reports the extraction outcome — the supplied screenshot shows successfully extracted pages together with character counts. Use this report to confirm the source was actually read before proceeding.</p>
         </article>
 
         <h2 id="s4-3">4.3 Conversion Output Is Candidate Data</h2>
